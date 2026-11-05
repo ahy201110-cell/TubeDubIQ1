@@ -2,7 +2,7 @@ name: Build TubeDub IQ APK
 
 on:
   push:
-    branches: [main]
+    branches: [main, "ui/**"]
   workflow_dispatch:
 
 permissions:
@@ -41,7 +41,7 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: TubeDubIQ-debug-apk
+          name: TubeDubIQ-material3-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
